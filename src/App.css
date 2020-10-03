@@ -64,6 +64,7 @@
 }
 
 .checksumRow {
+  margin-top: 1em;
   border-style: dotted;
   border-color: red;
 }

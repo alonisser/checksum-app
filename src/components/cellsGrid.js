@@ -8,15 +8,16 @@ class CellsGrid extends Component {
     constructor(props) {
         super(props);
         const initialRows = [[0, 0, 0, 0, 0, 0, 0, 0]];
-        this.state = {rows: initialRows, checksum:createBinaryArrayChecksum(initialRows)};
+        this.state = {rows: initialRows, checksum: createBinaryArrayChecksum(initialRows), showChecksum: false};
         this.onUpdate = this.onUpdate.bind(this)
         this.addRow = this.addRow.bind(this)
+        this.toggleChecksumDisplay = this.toggleChecksumDisplay.bind(this)
     }
 
     addRow() {
         const currentRows = [...this.state.rows];
         currentRows.push([0, 0, 0, 0, 0, 0, 0, 0]);
-        this.setState({rows: currentRows, checksum:createBinaryArrayChecksum(currentRows)});
+        this.setState({rows: currentRows, checksum: createBinaryArrayChecksum(currentRows)});
     }
 
 
@@ -28,7 +29,11 @@ class CellsGrid extends Component {
     onUpdate(rowIdx, byte) {
         const currentRows = [...this.state.rows];
         currentRows[rowIdx] = byte
-        this.setState({rows: currentRows, checksum:createBinaryArrayChecksum(currentRows)})
+        this.setState({rows: currentRows, checksum: createBinaryArrayChecksum(currentRows)})
+    }
+
+    toggleChecksumDisplay() {
+        this.setState({showChecksum: !this.state.showChecksum})
     }
 
     render() {
@@ -43,11 +48,15 @@ class CellsGrid extends Component {
                             <ResultCell values={row} type="asciiChar"/>
                         </div>
                     })}
-                    {this.state.checksum && <div className="fullRow flex">
-                        <CellRow isChecksum={true} cells={this.state.checksum} active={false}  />
-                        <ControlPlane onAddRow={this.addRow} />
+                    {this.state.checksum && this.state.showChecksum && <div className="fullRow flex">
+                        <CellRow isChecksum={true} cells={this.state.checksum} active={false}/>
 
                     </div>
+                    }
+                    {
+                        <ControlPlane showChecksum={this.state.showChecksum} onAddRow={this.addRow}
+                                      toggleChecksumDisplay={this.toggleChecksumDisplay}/>
+
                     }
                 </div>
 
