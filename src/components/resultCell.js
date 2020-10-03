@@ -2,11 +2,11 @@ import React from "react";
 import {binaryArrToValue} from '../lib/binaryHelpers';
 
 const resolveResult = (values, resultType) => {
-    if(resultType === 'number'){
+    if (resultType === 'number') {
         return binaryArrToValue(values)
-    } else  if (resultType == 'asciiChar'){
+    } else if (resultType === 'asciiChar') {
         let code = binaryArrToValue(values);
-        if(code > 32){
+        if (code > 32) {
             return String.fromCharCode(code)
         } else {
             return "🤷"
