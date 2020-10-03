@@ -62,4 +62,4 @@ const binaryArrToValue = (binaryArr)=>{
     return result
 }
 
-module.exports = {addBinary, subBinary, leftPadZero, leftPadOne, binaryArrToValue}
+export {addBinary, subBinary, leftPadZero, leftPadOne, binaryArrToValue}
