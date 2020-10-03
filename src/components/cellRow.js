@@ -36,7 +36,6 @@ class CellRow extends Component {
     }
 
     render() {
-        const props = this.props
         function resolveClass(isChecksum){
             if(!isChecksum){
                 return "flex cellRow"
