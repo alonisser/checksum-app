@@ -2,7 +2,7 @@ import React from "react";
 
 function Explanation(){
     return (
-        <div class="explanation">
+        <div className="explanation">
             <p>
                 How checksums are calculated in this example? Basically we sum all the bytes and subtract the result
                 from a "full" (11111111) Byte.

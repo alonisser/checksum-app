@@ -13,7 +13,7 @@ describe("Checksum svc spec",()=>{
             const res = createChecksum(inputBinary);
             expect(res).toBe('01100') // e.g 31 - 19
         })
-        
+
     })
 
     describe("calculateChecksumForBytes function", ()=>{
