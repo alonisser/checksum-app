@@ -5,7 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
       - run: npm install
       - run: npm run test
       - name: build react app
@@ -13,5 +15,7 @@ jobs:
       - name: Publish to gh pages
         uses: peaceiris/actions-gh-pages@v3
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_branch: master
           publish_dir: ./build
