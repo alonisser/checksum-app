@@ -12,8 +12,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Publish
-        uses: netlify/actions/build@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      - name: build react app
+        run: npm run build
+      - name: Publish to gh pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          publish_dir: ./build
