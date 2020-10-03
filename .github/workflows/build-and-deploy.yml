@@ -1,4 +1,4 @@
-name: deploy-netlify
+name: build-and-deploy
 on: [push]
 jobs:
   run-tests:
