@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+// import CellRow from './components/cellRow';
+import CellsGrid from './components/cellsGrid';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <p>
+                    Example of byte protocol checksum based error checking
+                </p>
+                <div className="container">
+                    <CellsGrid/>
+                </div>
+            </header>
+        </div>
+    );
 }
 
 export default App;

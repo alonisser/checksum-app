@@ -15,8 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+  min-height: 100vh;y: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -36,3 +35,25 @@
     transform: rotate(360deg);
   }
 }
+
+.cellRow {
+  width: 10em;
+  justify-content: space-around;
+}
+
+.fullRow {
+  justify-content: space-between;
+  width: 20em;
+
+}
+
+.cell {
+  width: fit-content;
+  border: azure;
+}
+
+/*utility classes*/
+.flex {
+  display: flex;
+}
+
