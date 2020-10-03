@@ -1,4 +1,3 @@
-/* global BigInt */
 
 const {subBinary, addBinary, leftPadZero, leftPadOne} = require("../../binaryHelpers");
 
@@ -31,14 +30,14 @@ const createChecksum = (arrayOfBinaryStrings) => {
  *
  * @param {Array<Array<number>>} bytes
  */
-const createBinaryArrayChecksum = (bytes)=>{
-    const binaryStrings = bytes.map((byte)=>{
+const createBinaryArrayChecksum = (bytes) => {
+    const binaryStrings = bytes.map((byte) => {
         return byte.join('')
     })
-    const binaryChecksum =  createChecksum(binaryStrings)
-    return binaryChecksum.split('').map((elem)=>{
+    const binaryChecksum = createChecksum(binaryStrings)
+    return binaryChecksum.split('').map((elem) => {
         return parseInt(elem, 2)
     })
 }
 
-module.exports = {createChecksum, createBinaryArrayChecksum}
+export {createChecksum, createBinaryArrayChecksum}
