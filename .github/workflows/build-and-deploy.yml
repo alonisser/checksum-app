@@ -12,8 +12,10 @@ jobs:
       - run: npm run test
       - name: build react app
         run: npm run build
-      - name: Publish to gh pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Netlify Deploy Action
+        uses: South-Paw/action-netlify-deploy@v1.0.4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+          build-dir: './build'
