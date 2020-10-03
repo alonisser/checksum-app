@@ -28,15 +28,25 @@ class CellRow extends Component {
                 return val
             }
         })
-
+        if(this.props.isChecksum){
+            return
+        }
         this.props.updateChange(this.props.idx, newByte)
 
     }
 
     render() {
-        return (<div className="flex cellRow">
+        const props = this.props
+        function resolveClass(isChecksum){
+            if(!isChecksum){
+                return "flex cellRow"
+            } else {
+                return "flex cellRow checksumRow"
+            }
+        }
+        return (<div className={resolveClass(this.props.isChecksum)} >
                 {this.props.cells.map((cell, idx) => {
-                    return <BinaryCell idx={idx} active={true} key={idx} onToggle={this.onCellChange} value={cell}/>
+                    return <BinaryCell idx={idx} active={this.props.active} key={idx} onToggle={this.onCellChange} value={cell}/>
 
                 })
                 }

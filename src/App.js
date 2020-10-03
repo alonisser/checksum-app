@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-// import CellRow from './components/cellRow';
 import CellsGrid from './components/cellsGrid';
+import Explanation from "./components/explanation";
 
 function App() {
     return (
@@ -10,10 +10,13 @@ function App() {
                 <p>
                     Example of byte protocol checksum based error checking
                 </p>
-                <div className="container">
-                    <CellsGrid/>
-                </div>
+
             </header>
+            <div className="container">
+                <CellsGrid/>
+            </div>
+            <Explanation/>
+
         </div>
     );
 }
