@@ -1,11 +1,14 @@
 ## What this does:
 A demonstration of checksum as part of a network protocol 
 
+## Deploy
+
+via github actions to netlify
 
 ## Technical 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-So here is regular README.md
+So here is regular README.md for a react-create-app things
 
 ## Available Scripts
 
