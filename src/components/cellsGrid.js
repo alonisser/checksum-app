@@ -39,7 +39,7 @@ class CellsGrid extends Component {
     render() {
         return (
 
-            <div className="cellGrid">
+            <div className="cellGrid grid-item">
                 <div className="rows">
                     {this.state.rows.map((row, idx) => {
                         return <div className="fullRow flex" key={idx}>

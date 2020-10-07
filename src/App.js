@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import CellsGrid from './components/cellsGrid';
-import Explanation from "./components/explanation";
+import Text from "./components/text";
 
 function App() {
+
     return (
         <div className="App">
             <header className="App-header">
@@ -14,8 +15,9 @@ function App() {
             </header>
             <div className="container">
                 <CellsGrid/>
+                <Text/>
             </div>
-            <Explanation/>
+
 
         </div>
     );
